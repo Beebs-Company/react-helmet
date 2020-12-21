@@ -457,8 +457,6 @@ const updateTags = (type, tags) => {
                 }
             }
 
-            newElement.setAttribute(HELMET_ATTRIBUTE, "true");
-
             // Remove a duplicate tag from domTagstoRemove, so it isn't cleared.
             if (
                 oldTags.some((existingTag, index) => {
