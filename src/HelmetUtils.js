@@ -495,11 +495,11 @@ const generateTitleAsString = (type, title, attributes, encode) => {
     const attributeString = generateElementAttributesAsString(attributes);
     const flattenedTitle = flattenArray(title);
     return attributeString
-        ? `<${type} ${HELMET_ATTRIBUTE}="true" ${attributeString}>${encodeSpecialCharacters(
+        ? `<${type} ${attributeString}>${encodeSpecialCharacters(
               flattenedTitle,
               encode
           )}</${type}>`
-        : `<${type} ${HELMET_ATTRIBUTE}="true">${encodeSpecialCharacters(
+        : `<${type}>${encodeSpecialCharacters(
               flattenedTitle,
               encode
           )}</${type}>`;
@@ -530,7 +530,7 @@ const generateTagsAsString = (type, tags, encode) =>
 
         const isSelfClosing = SELF_CLOSING_TAGS.indexOf(type) === -1;
 
-        return `${str}<${type} ${HELMET_ATTRIBUTE}="true" ${attributeHtml}${
+        return `${str}<${type} ${attributeHtml}${
             isSelfClosing ? `/>` : `>${tagContent}</${type}>`
         }`;
     }, "");
